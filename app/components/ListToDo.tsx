@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { getTasks, updateTask, deleteTask } from "../services/localStorageService";
 import { Task } from "../../type/task";
 import { MdDeleteForever } from "react-icons/md";
+import { CiBoxList } from "react-icons/ci";
 
 // props interface cho component ListToDo
 interface ListToDoProps {
@@ -127,7 +128,7 @@ const ListToDo: React.FC<ListToDoProps> = ({ refreshTrigger }) => {
     // đếm task in process
     const inProgressTasksCount = tasks.filter(task => !task.completed).length;
 
-    // hiện
+    // hiện loading khi đang fetch tasks
     if (loading) {
         return (
             <div className="max-w-4xl mx-auto px-4">
@@ -227,7 +228,9 @@ const ListToDo: React.FC<ListToDoProps> = ({ refreshTrigger }) => {
                 ) : (
                     // hiện khi không có task
                     <div className="flex flex-col items-center justify-center px-3 sm:px-6 py-8 sm:py-12 text-gray-500">
-                        <div className="text-4xl sm:text-6xl mb-3 sm:mb-4">📝</div>
+                        <div className="text-4xl sm:text-6xl mb-3 sm:mb-4 text-gray-400">
+                            <CiBoxList />
+                        </div>
                         <p className="text-base sm:text-lg mb-2">No tasks yet!</p>
                         <p className="text-xs sm:text-sm">Add the first task ^^.</p>
                     </div>
