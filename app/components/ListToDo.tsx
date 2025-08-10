@@ -231,8 +231,7 @@ const ListToDo: React.FC<ListToDoProps> = ({ refreshTrigger }) => {
                         <div className="text-4xl sm:text-6xl mb-3 sm:mb-4 text-gray-400">
                             <CiBoxList />
                         </div>
-                        <p className="text-base sm:text-lg mb-2">No tasks yet!</p>
-                        <p className="text-xs sm:text-sm">Add the first task ^^.</p>
+
                     </div>
                 )}
             </div>
